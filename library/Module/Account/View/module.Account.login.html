@@ -1,0 +1,20 @@
+<?php
+
+	$i18n	=	$this->system->I18n->module->account;
+
+?>
+<form method="post" action="<?php echo $this->system->router->getUrl() ?>">
+	<p>
+		<label>
+			<?php echo $i18n->label->login ?>
+			<input type="text" name="login" value="<?php echo $login ?>" />
+		</label>
+		<label>
+			<?php echo $i18n->label->password ?>
+			<input type="password" name="password" />
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="<?php echo $i18n->label->connection ?>" class="ui-e ui-button" />
+	</p>
+</form>

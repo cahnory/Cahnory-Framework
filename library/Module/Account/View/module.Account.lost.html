@@ -1,0 +1,25 @@
+<?php
+
+	$i18n	=	$this->system->I18n->module->account;
+
+?>
+<?php if($unknownLogin): ?>
+	<p>
+		<?php echo $i18n->message->unknownLogin ?>
+	</p>
+<?php else: ?>
+	<p>
+		<?php echo $i18n->message->lost ?>
+	</p>
+<?php endif; ?>
+<form method="post" action="<?php echo $this->system->router->getUrl() ?>">
+	<p>
+		<label>
+			<?php echo $i18n->label->login ?>
+			<input type="text" name="login" value="<?php echo $login ?>" />
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="<?php echo $i18n->label->reset ?>" class="ui-e ui-button" />
+	</p>
+</form>

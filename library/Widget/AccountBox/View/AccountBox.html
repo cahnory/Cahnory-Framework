@@ -1,0 +1,14 @@
+<?php
+
+	$i18n	=	$this->system->I18n->Widget->AccountBox;
+
+?>
+<div class="widget-AccountBox">
+	<?php if($user->logged()): ?>
+		<span class="username"><?php echo $user->username; ?></span>
+		<a href="<?php echo $this->system->router->getURL('Account/logout') ?>" class="logout-button"><?php echo $i18n->label->logout ?></a>
+	<?php else: ?>
+		<a href="<?php echo $this->system->router->getURL('Account/login') ?>" class="login-button"><?php echo $i18n->label->login ?></a>
+		<a href="<?php echo $this->system->router->getURL('Account/lost') ?>" class="lost-button"><?php echo $i18n->label->lost ?></a>
+	<?php endif; ?>
+</div>

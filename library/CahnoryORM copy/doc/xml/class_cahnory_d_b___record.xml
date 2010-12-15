@@ -1,0 +1,1049 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.9">
+  <compounddef id="class_cahnory_d_b___record" kind="class" prot="public">
+    <compoundname>CahnoryDB_Record</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_cahnory_d_b___record_125f27330f03f89854a18a93e9fe75aae" prot="private" static="yes" mutable="no">
+        <type>static</type>
+        <definition>$_lastRecordID</definition>
+        <argsstring></argsstring>
+        <name>$_lastRecordID</name>
+        <initializer> 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="13" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1bc686c23af6ae116b72bc6adb4482a1f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_db</definition>
+        <argsstring></argsstring>
+        <name>$_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="21" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_164da16c4a1c7b2dc6784f6ef26341ed7" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_id</definition>
+        <argsstring></argsstring>
+        <name>$_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="29" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_10b27745bc68be2778e7f811edbfe36c2" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_className</definition>
+        <argsstring></argsstring>
+        <name>$_className</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="37" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1c0ee5b766d19cb282552a3449a1f8376" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_table</definition>
+        <argsstring></argsstring>
+        <name>$_table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="45" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1e1804a14c800e0834f74463533a56945" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_alias</definition>
+        <argsstring></argsstring>
+        <name>$_alias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="55" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1f181476d2c0ca7dd78badc87feba1571" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_recordName</definition>
+        <argsstring></argsstring>
+        <name>$_recordName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="63" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1177f1ae382c42f12f4f6c4a75d39819b" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_recordNameTrail</definition>
+        <argsstring></argsstring>
+        <name>$_recordNameTrail</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="71" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_175191b8d0631b8a5fd6e3405351a22ec" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_primary</definition>
+        <argsstring></argsstring>
+        <name>$_primary</name>
+        <initializer>	&apos;id&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="79" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_15fceff2607cd15442917d37141b168d1" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_columns</definition>
+        <argsstring></argsstring>
+        <name>$_columns</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="88" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_176ad7cb1c9591d6c4dab084acf718a25" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_relations</definition>
+        <argsstring></argsstring>
+        <name>$_relations</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="98" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_13574505ae6db09ff58bd621df33b9041" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_foreign</definition>
+        <argsstring></argsstring>
+        <name>$_foreign</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="106" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_17da2fec8846bcc269a5ab8f0ee099040" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_local</definition>
+        <argsstring></argsstring>
+        <name>$_local</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="114" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1f15e589d7c2e1981d2157b99409a381e" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_related</definition>
+        <argsstring></argsstring>
+        <name>$_related</name>
+        <initializer>	false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="122" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_190110afd993862c3efc05faed9e58cf5" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_isOneOf</definition>
+        <argsstring></argsstring>
+        <name>$_isOneOf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="130" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_11fb4a849fab8b1058a6032f18bb69a33" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_defaultValues</definition>
+        <argsstring></argsstring>
+        <name>$_defaultValues</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="142" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_124b9e8ff24f104ed29d6f87ac979ac96" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_filledValues</definition>
+        <argsstring></argsstring>
+        <name>$_filledValues</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="152" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_12e161358e5e21c262d947e44ed04500c" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_values</definition>
+        <argsstring></argsstring>
+        <name>$_values</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="162" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_150f6ae5b7f6fecacc9f2f98a388de517" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_offsets</definition>
+        <argsstring></argsstring>
+        <name>$_offsets</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="172" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1b605cacb3e87d7f0212d2db94db83489" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_offset</definition>
+        <argsstring></argsstring>
+        <name>$_offset</name>
+        <initializer>	0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="180" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_192dc316c401fb866f519822781adc0dd" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_nbFilledValues</definition>
+        <argsstring></argsstring>
+        <name>$_nbFilledValues</name>
+        <initializer>	0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="188" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1a436c66876a18590604ab31a65d08dd6" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_saved</definition>
+        <argsstring></argsstring>
+        <name>$_saved</name>
+        <initializer>	true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="200" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1db3c96ee87ab3dc6891a9b7d989c49d3" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_deeplySaved</definition>
+        <argsstring></argsstring>
+        <name>$_deeplySaved</name>
+        <initializer>	true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="209" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1e1ebb2b778952b20e497dd0c46917ea0" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_queryFrom</definition>
+        <argsstring></argsstring>
+        <name>$_queryFrom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="222" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_12e4e4203b40ac74f14748e9f6f6c1798" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_queryInsert</definition>
+        <argsstring></argsstring>
+        <name>$_queryInsert</name>
+        <initializer>	array(&apos;values&apos;=&gt;NULL,&apos;columns&apos;=&gt;NULL,&apos;updates&apos;=&gt;NULL)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="233" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_186ec3b5ec6f120394602771ccf71b2cb" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_querySelect</definition>
+        <argsstring></argsstring>
+        <name>$_querySelect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="244" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_184b0c858b78ded796f9490c251031964" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_queryWhere</definition>
+        <argsstring></argsstring>
+        <name>$_queryWhere</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="255" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___record_1f3f1addc554b6f99fc1548384faf3be1" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_queryFetchSplits</definition>
+        <argsstring></argsstring>
+        <name>$_queryFetchSplits</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="266" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_cahnory_d_b___record_1c28688e5850a284aaa96a469ee21424e" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>(CahnoryDB $db, $name, $class)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>CahnoryDB $</type>
+          <declname>db</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>class</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="269" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="268" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1d0cb87b388bc74d63dc884accdca8713" prot="public" static="no" const="no" explicit="no" inline="no" final="yes" virt="non-virtual">
+        <type></type>
+        <definition>__clone</definition>
+        <argsstring>()</argsstring>
+        <name>__clone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="277" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="276" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1bc8e9e31bb15c8a44c3210ec551407c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__get</definition>
+        <argsstring>($name)</argsstring>
+        <name>__get</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="287" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="286" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_183c2703c91959192f759992ad5640b67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__set</definition>
+        <argsstring>($name, $value)</argsstring>
+        <name>__set</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="292" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="291" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1e8ed0112c0675ef955f6b14917b3e13d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fill</definition>
+        <argsstring>($values)</argsstring>
+        <name>fill</name>
+        <param>
+          <type>$</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="363" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="362" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_13e9c1a619dd1ff40931b92383c37b403" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>find</definition>
+        <argsstring>($primary=NULL)</argsstring>
+        <name>find</name>
+        <param>
+          <type>$</type>
+          <declname>primary</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="370" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="369" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_18c584efa272687554bd9abe5e83fe10c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getValue</definition>
+        <argsstring>($name)</argsstring>
+        <name>getValue</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="401" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="400" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1edcc52b3673b8df9425e52f13accb2a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>isEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="511" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="510" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_16b93ceb8cecf73af4c402ffb4c184e45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>isSaved</definition>
+        <argsstring>()</argsstring>
+        <name>isSaved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="516" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="515" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1fc8a3c62679cf00ade9f15fb2a6d6132" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>save</definition>
+        <argsstring>()</argsstring>
+        <name>save</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="521" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="520" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_18e7aaacf604710d7f853f3261d84b9fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setValue</definition>
+        <argsstring>($name, $value)</argsstring>
+        <name>setValue</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="554" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="553" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1efbfa229f1c9e1fc967bff724a010f9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>value</definition>
+        <argsstring>()</argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="577" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="576" bodyend="590"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1e619dcf2218c21549cb65d875bbc6c9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rewind</definition>
+        <argsstring>()</argsstring>
+        <name>rewind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="593" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="593" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1f343507d1926e6ecf964625d41db528c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>current</definition>
+        <argsstring>()</argsstring>
+        <name>current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="597" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="597" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1729e946b4ef600e71740113c6d4332c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>key</definition>
+        <argsstring>()</argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="601" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="601" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1cea62048bfee7b3cd80ed446c86fb78a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="605" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="605" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1bb9f0d6adf1eb9b3b55712056861a247" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>valid</definition>
+        <argsstring>()</argsstring>
+        <name>valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="609" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="609" bodyend="612"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1c6bde6b1eb50eb5377e91771fe46b7a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>offsetSet</definition>
+        <argsstring>($offset, $value)</argsstring>
+        <name>offsetSet</name>
+        <param>
+          <type>$</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="615" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="615" bodyend="617"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_124ff257ec0c2221bc6fd7b1b4388e26e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>offsetExists</definition>
+        <argsstring>($offset)</argsstring>
+        <name>offsetExists</name>
+        <param>
+          <type>$</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="618" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="618" bodyend="620"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_12411227ea7118b13495de9839fd4b563" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>offsetUnset</definition>
+        <argsstring>($offset)</argsstring>
+        <name>offsetUnset</name>
+        <param>
+          <type>$</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="621" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="621" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_159aee6e89465b48f014699f41b521f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>offsetGet</definition>
+        <argsstring>($offset)</argsstring>
+        <name>offsetGet</name>
+        <param>
+          <type>$</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="624" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="624" bodyend="626"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_cahnory_d_b___record_17ac28814cedaa43518662bf93212b95c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_fetchRow</definition>
+        <argsstring>(array $row)</argsstring>
+        <name>_fetchRow</name>
+        <param>
+          <type>array $</type>
+          <declname>row</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="297" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="296" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_15a8f0d81aee0a361354e65b22e995ec5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_prepareRecord</definition>
+        <argsstring>()</argsstring>
+        <name>_prepareRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="317" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="316" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_129c0bb38f4e0d4c0ed6dc53336be2e57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_prepareRelations</definition>
+        <argsstring>()</argsstring>
+        <name>_prepareRelations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="334" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="333" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_111b8dd2f2fc93da759dc8c26b3f4c018" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>_prepareFilter</definition>
+        <argsstring>(array &amp;$params=array())</argsstring>
+        <name>_prepareFilter</name>
+        <param>
+          <type>array &amp;$</type>
+          <declname>params</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="340" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="339" bodyend="360"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_cahnory_d_b___record_101fd43fd23f987cc60b16b738500f761" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hasColumn</definition>
+        <argsstring>($name, $type=NULL, $value=NULL, $default=NULL)</argsstring>
+        <name>hasColumn</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>type</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines a column</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name the column name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$type the column type </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value the column type value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default the column default value</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+protected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="421" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="420" bodyend="444"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_14e3bc39c17d522ad92115b6f468e0e0d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hasOne</definition>
+        <argsstring>($name, $alias=array(), $opt=NULL)</argsstring>
+        <name>hasOne</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>alias</declname>
+          <defval>array()</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>opt</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines a foreign column</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name the record name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$alias the column name </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$opt</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+protected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="456" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="455" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_14361756ffa4efc1520773351e302e00e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hasPrimary</definition>
+        <argsstring>($column)</argsstring>
+        <name>hasPrimary</name>
+        <param>
+          <type>$</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the primary key</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$column the column name</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+protected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="494" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="493" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1ca9bac350ad668703ba2890e0881d4fc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>hasTable</definition>
+        <argsstring>($name)</argsstring>
+        <name>hasTable</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the table name</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name the table name</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+protected </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="506" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="505" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1d69acdbce085490afa51ff1a22393f69" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setDefinition</definition>
+        <argsstring>()</argsstring>
+        <name>setDefinition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="550" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="550" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___record_1af15e0a8dba4e019537783e0d2177479" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>setRelations</definition>
+        <argsstring>()</argsstring>
+        <name>setRelations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="551" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="551" bodyend="551"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" line="4" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Record.php" bodystart="3" bodyend="627"/>
+    <listofallmembers>
+      <member refid="class_cahnory_d_b___record_1e1804a14c800e0834f74463533a56945" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_alias</name></member>
+      <member refid="class_cahnory_d_b___record_10b27745bc68be2778e7f811edbfe36c2" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_className</name></member>
+      <member refid="class_cahnory_d_b___record_15fceff2607cd15442917d37141b168d1" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_columns</name></member>
+      <member refid="class_cahnory_d_b___record_1bc686c23af6ae116b72bc6adb4482a1f" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_db</name></member>
+      <member refid="class_cahnory_d_b___record_1db3c96ee87ab3dc6891a9b7d989c49d3" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_deeplySaved</name></member>
+      <member refid="class_cahnory_d_b___record_11fb4a849fab8b1058a6032f18bb69a33" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_defaultValues</name></member>
+      <member refid="class_cahnory_d_b___record_124b9e8ff24f104ed29d6f87ac979ac96" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_filledValues</name></member>
+      <member refid="class_cahnory_d_b___record_13574505ae6db09ff58bd621df33b9041" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_foreign</name></member>
+      <member refid="class_cahnory_d_b___record_164da16c4a1c7b2dc6784f6ef26341ed7" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_id</name></member>
+      <member refid="class_cahnory_d_b___record_190110afd993862c3efc05faed9e58cf5" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_isOneOf</name></member>
+      <member refid="class_cahnory_d_b___record_125f27330f03f89854a18a93e9fe75aae" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_lastRecordID</name></member>
+      <member refid="class_cahnory_d_b___record_17da2fec8846bcc269a5ab8f0ee099040" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_local</name></member>
+      <member refid="class_cahnory_d_b___record_192dc316c401fb866f519822781adc0dd" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_nbFilledValues</name></member>
+      <member refid="class_cahnory_d_b___record_1b605cacb3e87d7f0212d2db94db83489" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_offset</name></member>
+      <member refid="class_cahnory_d_b___record_150f6ae5b7f6fecacc9f2f98a388de517" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_offsets</name></member>
+      <member refid="class_cahnory_d_b___record_175191b8d0631b8a5fd6e3405351a22ec" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_primary</name></member>
+      <member refid="class_cahnory_d_b___record_1f3f1addc554b6f99fc1548384faf3be1" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_queryFetchSplits</name></member>
+      <member refid="class_cahnory_d_b___record_1e1ebb2b778952b20e497dd0c46917ea0" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_queryFrom</name></member>
+      <member refid="class_cahnory_d_b___record_12e4e4203b40ac74f14748e9f6f6c1798" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_queryInsert</name></member>
+      <member refid="class_cahnory_d_b___record_186ec3b5ec6f120394602771ccf71b2cb" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_querySelect</name></member>
+      <member refid="class_cahnory_d_b___record_184b0c858b78ded796f9490c251031964" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_queryWhere</name></member>
+      <member refid="class_cahnory_d_b___record_1f181476d2c0ca7dd78badc87feba1571" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_recordName</name></member>
+      <member refid="class_cahnory_d_b___record_1177f1ae382c42f12f4f6c4a75d39819b" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_recordNameTrail</name></member>
+      <member refid="class_cahnory_d_b___record_1f15e589d7c2e1981d2157b99409a381e" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_related</name></member>
+      <member refid="class_cahnory_d_b___record_176ad7cb1c9591d6c4dab084acf718a25" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_relations</name></member>
+      <member refid="class_cahnory_d_b___record_1a436c66876a18590604ab31a65d08dd6" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_saved</name></member>
+      <member refid="class_cahnory_d_b___record_1c0ee5b766d19cb282552a3449a1f8376" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_table</name></member>
+      <member refid="class_cahnory_d_b___record_12e161358e5e21c262d947e44ed04500c" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>$_values</name></member>
+      <member refid="class_cahnory_d_b___record_1d0cb87b388bc74d63dc884accdca8713" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>__clone</name></member>
+      <member refid="class_cahnory_d_b___record_1c28688e5850a284aaa96a469ee21424e" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>__construct</name></member>
+      <member refid="class_cahnory_d_b___record_1bc8e9e31bb15c8a44c3210ec551407c8" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>__get</name></member>
+      <member refid="class_cahnory_d_b___record_183c2703c91959192f759992ad5640b67" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>__set</name></member>
+      <member refid="class_cahnory_d_b___record_17ac28814cedaa43518662bf93212b95c" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>_fetchRow</name></member>
+      <member refid="class_cahnory_d_b___record_111b8dd2f2fc93da759dc8c26b3f4c018" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>_prepareFilter</name></member>
+      <member refid="class_cahnory_d_b___record_15a8f0d81aee0a361354e65b22e995ec5" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>_prepareRecord</name></member>
+      <member refid="class_cahnory_d_b___record_129c0bb38f4e0d4c0ed6dc53336be2e57" prot="private" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>_prepareRelations</name></member>
+      <member refid="class_cahnory_d_b___record_1f343507d1926e6ecf964625d41db528c" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>current</name></member>
+      <member refid="class_cahnory_d_b___record_1e8ed0112c0675ef955f6b14917b3e13d" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>fill</name></member>
+      <member refid="class_cahnory_d_b___record_13e9c1a619dd1ff40931b92383c37b403" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>find</name></member>
+      <member refid="class_cahnory_d_b___record_18c584efa272687554bd9abe5e83fe10c" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>getValue</name></member>
+      <member refid="class_cahnory_d_b___record_101fd43fd23f987cc60b16b738500f761" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>hasColumn</name></member>
+      <member refid="class_cahnory_d_b___record_14e3bc39c17d522ad92115b6f468e0e0d" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>hasOne</name></member>
+      <member refid="class_cahnory_d_b___record_14361756ffa4efc1520773351e302e00e" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>hasPrimary</name></member>
+      <member refid="class_cahnory_d_b___record_1ca9bac350ad668703ba2890e0881d4fc" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>hasTable</name></member>
+      <member refid="class_cahnory_d_b___record_1edcc52b3673b8df9425e52f13accb2a1" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>isEmpty</name></member>
+      <member refid="class_cahnory_d_b___record_16b93ceb8cecf73af4c402ffb4c184e45" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>isSaved</name></member>
+      <member refid="class_cahnory_d_b___record_1729e946b4ef600e71740113c6d4332c0" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>key</name></member>
+      <member refid="class_cahnory_d_b___record_1cea62048bfee7b3cd80ed446c86fb78a" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>next</name></member>
+      <member refid="class_cahnory_d_b___record_124ff257ec0c2221bc6fd7b1b4388e26e" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>offsetExists</name></member>
+      <member refid="class_cahnory_d_b___record_159aee6e89465b48f014699f41b521f87" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>offsetGet</name></member>
+      <member refid="class_cahnory_d_b___record_1c6bde6b1eb50eb5377e91771fe46b7a3" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>offsetSet</name></member>
+      <member refid="class_cahnory_d_b___record_12411227ea7118b13495de9839fd4b563" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>offsetUnset</name></member>
+      <member refid="class_cahnory_d_b___record_1e619dcf2218c21549cb65d875bbc6c9c" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>rewind</name></member>
+      <member refid="class_cahnory_d_b___record_1fc8a3c62679cf00ade9f15fb2a6d6132" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>save</name></member>
+      <member refid="class_cahnory_d_b___record_1d69acdbce085490afa51ff1a22393f69" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>setDefinition</name></member>
+      <member refid="class_cahnory_d_b___record_1af15e0a8dba4e019537783e0d2177479" prot="protected" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>setRelations</name></member>
+      <member refid="class_cahnory_d_b___record_18e7aaacf604710d7f853f3261d84b9fc" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>setValue</name></member>
+      <member refid="class_cahnory_d_b___record_1bb9f0d6adf1eb9b3b55712056861a247" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>valid</name></member>
+      <member refid="class_cahnory_d_b___record_1efbfa229f1c9e1fc967bff724a010f9e" prot="public" virt="non-virtual"><scope>CahnoryDB_Record</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

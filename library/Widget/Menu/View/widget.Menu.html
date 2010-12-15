@@ -1,0 +1,17 @@
+<!-- Widget_Menu -->
+<ul class="widget-menu">
+<?php foreach($menu as $key => $item): ?>
+	<li>
+	<?php if(strlen($item->link) || strlen($item->label)): ?>
+		<a href="<?php echo $item->link === NULL ? '#' : htmlspecialchars($item->link) ?>"><?php echo $item->label === NULL ? $item->link : $item->label ?></a>
+	<?php endif; ?>
+	<?php
+		if($item->length()) {
+			$menu	=	$item;
+			include	__FILE__;
+		}	
+	?>
+	</li>
+<?php endforeach; ?>
+</ul>
+<!-- END Widget_Menu -->

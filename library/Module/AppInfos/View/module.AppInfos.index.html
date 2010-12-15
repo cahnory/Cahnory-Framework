@@ -1,0 +1,65 @@
+<?php
+
+	$system	=	$this->system;
+
+?>
+<p>
+	Le <em><strong>Cahnory</strong> framework</em> est correctement installé. Voici quelques informations susceptibles de vous intéresser :
+</p>
+<table>
+	<tr>
+		<th>System</th>
+		<td class="path"><?php echo $system->systemPath() ?></td>
+	</tr>
+	<tr>
+		<th>Application</th>
+		<td class="path"><?php echo $system->appPath() ?></td>
+	</tr>
+	<tr>
+		<th>Module d'accueil</th>
+		<td><span class="tag"><?php echo ucfirst($home['module']) ?></span> <em>(route : <strong><?php echo $home['route'] ?></strong>)</em></td>
+	</tr>
+</table>
+
+<h2>Librairie</h2>
+<table>
+	<tr>
+		<th>Modules installés</th>
+		<td>
+			<?php foreach($modules as $key => $module): ?>
+				<a href="<?php echo $this->system->router->getURL($module) ?>" class="tag"><?php echo ucfirst($module) ?></a>
+			<?php endforeach; ?>
+		</td>
+	</tr>
+	<tr>
+		<th>Helpers installés</th>
+		<td>
+			<?php foreach($helpers as $key => $helper): ?>
+				<span class="tag"><?php echo ucfirst($helper) ?></span>
+			<?php endforeach; ?>
+		</td>
+	</tr>
+</table>
+<p>
+	Vous souhaitez modifier la vue de cette page ? vous la retrouverez ici :
+</p>
+<p>
+	<span class="tag path">System<?php echo substr(__FILE__, strlen($system->systemPath())) ?></span>
+</p>
+<p>
+	Vous pouvez aussi la substituer par une vue de votre application. Pour se faire, allez dans le dossier <span class="tag path">View</span> de votre application et créez y un fichier du nom de votre module :
+</p>
+<p>
+	<span class="tag path">Application/View/module.<?php echo $system->module->name() ?>.html</span>
+</p>
+<p>
+	Si vous utilisez plusieurs fois le même module et désirez donnez une vue spécifique à l'un d'entre eux, utilisez son adresse de routage <em>(route)</em> précédée du signe <strong>"+"</strong> comme ceci :
+</p>
+<p>
+	<span class="tag path">Application/View/+module.<?php echo $system->module->route() ?>.html</span>
+</p>
+<?php if($system->module->route() == $system->module->name()): ?>
+<p>
+	<em>Dans ce cas précis, le nom du module est identique à sa route.</em>
+</p>
+<?php endif; ?>

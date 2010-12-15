@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.9">
+  <compounddef id="class_cahnory_d_b___object" kind="class" prot="public">
+    <compoundname>CahnoryDB_Object</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_cahnory_d_b___object_175191b8d0631b8a5fd6e3405351a22ec" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_primary</definition>
+        <argsstring></argsstring>
+        <name>$_primary</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" line="5" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___object_15fceff2607cd15442917d37141b168d1" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_columns</definition>
+        <argsstring></argsstring>
+        <name>$_columns</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" line="6" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" line="4" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Object.php" bodystart="3" bodyend="7"/>
+    <listofallmembers>
+      <member refid="class_cahnory_d_b___object_15fceff2607cd15442917d37141b168d1" prot="private" virt="non-virtual"><scope>CahnoryDB_Object</scope><name>$_columns</name></member>
+      <member refid="class_cahnory_d_b___object_175191b8d0631b8a5fd6e3405351a22ec" prot="private" virt="non-virtual"><scope>CahnoryDB_Object</scope><name>$_primary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

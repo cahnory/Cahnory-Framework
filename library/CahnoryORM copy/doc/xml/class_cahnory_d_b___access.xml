@@ -1,0 +1,358 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.5.9">
+  <compounddef id="class_cahnory_d_b___access" kind="class" prot="public">
+    <compoundname>CahnoryDB_Access</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_cahnory_d_b___access_1bc686c23af6ae116b72bc6adb4482a1f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_db</definition>
+        <argsstring></argsstring>
+        <name>$_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="5" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___access_18c13460db048e5a2017117a6d1b040bf" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_cfg</definition>
+        <argsstring></argsstring>
+        <name>$_cfg</name>
+        <initializer>	array(
+			&apos;driver&apos;	=&gt;	&apos;mysql&apos;,
+			&apos;host&apos;		=&gt;	&apos;localhost&apos;,
+			&apos;port&apos;		=&gt;	NULL,
+			&apos;database&apos;	=&gt;	NULL,
+			&apos;user&apos;		=&gt;	NULL,
+			&apos;pass&apos;		=&gt;	NULL,
+			&apos;options&apos;	=&gt;	array(PDO::MYSQL_ATTR_INIT_COMMAND =&gt; &apos;SET NAMES \&apos;UTF8\&apos;&apos;)
+		)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="14" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___access_11bd04bbb5d1136b22de9acf83850a728" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_lastQuery</definition>
+        <argsstring></argsstring>
+        <name>$_lastQuery</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="15" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cahnory_d_b___access_10ed6a7516d3cea6d6826c5cf4e2d2b78" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>$_preparedQuerys</definition>
+        <argsstring></argsstring>
+        <name>$_preparedQuerys</name>
+        <initializer>	array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="16" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_cahnory_d_b___access_1f7f9493844d2d66e924e3c1df51ce616" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>__construct</definition>
+        <argsstring>($config=array())</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>$</type>
+          <declname>config</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="19" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_178572828d11dcdf2a498497d9001d557" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>connect</definition>
+        <argsstring>()</argsstring>
+        <name>connect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="24" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="23" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1b696bd79e1b13e1310ed2d65da4f2658" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>query</definition>
+        <argsstring>($query, $parameters=array())</argsstring>
+        <name>query</name>
+        <param>
+          <type>$</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>parameters</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="47" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="46" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_11cd0e18d5cc164a888f7bb39d5811dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>columnCount</definition>
+        <argsstring>()</argsstring>
+        <name>columnCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="64" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1928a98b280c4dd8971ce6998eb157409" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>errorCode</definition>
+        <argsstring>()</argsstring>
+        <name>errorCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="70" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1c5230ce6cd46c5e922146a441d807877" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>errorInfo</definition>
+        <argsstring>()</argsstring>
+        <name>errorInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="76" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_161869dad7eba08b537578ad93c33d54b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fetch</definition>
+        <argsstring>($style=PDO::FETCH_NUM)</argsstring>
+        <name>fetch</name>
+        <param>
+          <type>$</type>
+          <declname>style</declname>
+          <defval>PDO::FETCH_NUM</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="82" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="81" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_16b3091c2c795a88b8f41c53ea4ad63d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fetchAll</definition>
+        <argsstring>($style=PDO::FETCH_NUM)</argsstring>
+        <name>fetchAll</name>
+        <param>
+          <type>$</type>
+          <declname>style</declname>
+          <defval>PDO::FETCH_NUM</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="93" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="92" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_14094fc1094eb7d4dc260cd0d60dbf0bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fetchColumn</definition>
+        <argsstring>($number=0)</argsstring>
+        <name>fetchColumn</name>
+        <param>
+          <type>$</type>
+          <declname>number</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="104" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="103" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1d12d0a7f82d9a44c94574703b7abdf65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>fetchObject</definition>
+        <argsstring>($class= &apos;stdClass&apos;, array $args=NULL)</argsstring>
+        <name>fetchObject</name>
+        <param>
+          <type>$</type>
+          <declname>class</declname>
+          <defval>&apos;stdClass&apos;</defval>
+        </param>
+        <param>
+          <type>array $</type>
+          <declname>args</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="110" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_10696d53fd3702f7961a382e4f5bfb4ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getDriverDSN</definition>
+        <argsstring>($driver, $db, $host= &apos;localhost&apos;, $port=NULL)</argsstring>
+        <name>getDriverDSN</name>
+        <param>
+          <type>$</type>
+          <declname>driver</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>db</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>host</declname>
+          <defval>&apos;localhost&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>port</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="116" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="115" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1bb9efc1caeba4773a942907ef4e05cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>getUriDSN</definition>
+        <argsstring>($uri)</argsstring>
+        <name>getUriDSN</name>
+        <param>
+          <type>$</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="122" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_16384591ddfa09e979deb8a695bca0f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>lastInsertId</definition>
+        <argsstring>()</argsstring>
+        <name>lastInsertId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="127" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_1008a39a69d47048bd395c3c63c529ed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>prepare</definition>
+        <argsstring>($query)</argsstring>
+        <name>prepare</name>
+        <param>
+          <type>$</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="134" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="133" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cahnory_d_b___access_182b073888555fc72e57142fe913db377" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rowCount</definition>
+        <argsstring>()</argsstring>
+        <name>rowCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="139" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="138" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" line="4" bodyfile="/Users/studio2/Dropbox/Server/cahnory/library/CahnoryDB/Access.php" bodystart="3" bodyend="143"/>
+    <listofallmembers>
+      <member refid="class_cahnory_d_b___access_18c13460db048e5a2017117a6d1b040bf" prot="private" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>$_cfg</name></member>
+      <member refid="class_cahnory_d_b___access_1bc686c23af6ae116b72bc6adb4482a1f" prot="private" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>$_db</name></member>
+      <member refid="class_cahnory_d_b___access_11bd04bbb5d1136b22de9acf83850a728" prot="private" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>$_lastQuery</name></member>
+      <member refid="class_cahnory_d_b___access_10ed6a7516d3cea6d6826c5cf4e2d2b78" prot="private" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>$_preparedQuerys</name></member>
+      <member refid="class_cahnory_d_b___access_1f7f9493844d2d66e924e3c1df51ce616" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>__construct</name></member>
+      <member refid="class_cahnory_d_b___access_11cd0e18d5cc164a888f7bb39d5811dd6" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>columnCount</name></member>
+      <member refid="class_cahnory_d_b___access_178572828d11dcdf2a498497d9001d557" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>connect</name></member>
+      <member refid="class_cahnory_d_b___access_1928a98b280c4dd8971ce6998eb157409" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>errorCode</name></member>
+      <member refid="class_cahnory_d_b___access_1c5230ce6cd46c5e922146a441d807877" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>errorInfo</name></member>
+      <member refid="class_cahnory_d_b___access_161869dad7eba08b537578ad93c33d54b" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>fetch</name></member>
+      <member refid="class_cahnory_d_b___access_16b3091c2c795a88b8f41c53ea4ad63d8" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>fetchAll</name></member>
+      <member refid="class_cahnory_d_b___access_14094fc1094eb7d4dc260cd0d60dbf0bd" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>fetchColumn</name></member>
+      <member refid="class_cahnory_d_b___access_1d12d0a7f82d9a44c94574703b7abdf65" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>fetchObject</name></member>
+      <member refid="class_cahnory_d_b___access_10696d53fd3702f7961a382e4f5bfb4ad" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>getDriverDSN</name></member>
+      <member refid="class_cahnory_d_b___access_1bb9efc1caeba4773a942907ef4e05cf4" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>getUriDSN</name></member>
+      <member refid="class_cahnory_d_b___access_16384591ddfa09e979deb8a695bca0f67" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>lastInsertId</name></member>
+      <member refid="class_cahnory_d_b___access_1008a39a69d47048bd395c3c63c529ed5" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>prepare</name></member>
+      <member refid="class_cahnory_d_b___access_1b696bd79e1b13e1310ed2d65da4f2658" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>query</name></member>
+      <member refid="class_cahnory_d_b___access_182b073888555fc72e57142fe913db377" prot="public" virt="non-virtual"><scope>CahnoryDB_Access</scope><name>rowCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
