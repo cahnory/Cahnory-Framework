@@ -1,0 +1,116 @@
+/*
+	Hacks
+	************************************************
+	- Browsers 
+	  + Firefox 1+		selector, x:-moz-any-link {}
+	  + IE				.ie selector {}
+	  + IE <  X			.lt-ieX selector {}
+	  + IE >  X			.gt-ieX selector {}
+	  + IE <= X			.lte-ieX selector {}
+	  + IE >= X			.gte-ieX selector {}
+	  
+	    IE classes are from IE4 to IE9.
+	    IE classes are on the body element.
+	  
+	- Javascript
+	  + enabled			#js
+	  + disabled		#nojs
+	  
+	    Javascript id is on the html element.
+	    
+	    
+	Useful browser workaround
+	************************************************
+	- Internet Explorer
+	  + inline-block on block element [lt-ie8]
+	    display:inline; zoom:1
+	- Firefox
+	  + inline-block on block element
+	    display: -moz-inline-stack
+	  
+	    IE classes are from IE4 to IE9.
+	    IE classes are on the body element.
+	  
+	- Javascript
+	  + enabled			#js
+	  + disabled		#nojs
+	  
+	    Javascript id is on the html element.
+	
+	
+	CSS3
+	************************************************
+	+ @backgroundClip();
+	+ @backgroundOrigin();
+	+ @backgroundSize();
+	+ @borderRadius();
+	+ @boxShadow();
+	+ @rotate();
+	+ @transition();
+	
+	+ @dropShadow();
+	+ @insetShadow();
+		
+	+ @horizontalGradient();
+	+ @verticalGradient();
+*/
+html, body {
+	background: #F3F3F3 url('#/img/body-background.gif');
+	color: #444;
+	font-family: georgia, serif, "Times New Roman", Times, serif;
+	font-size: 14px;
+	line-height: 1.4em;
+	text-shadow: 0 1px #FFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: baskerville, palatino, 'palatino linotype', georgia, serif, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 1.4em;
+	margin: 1em 0 0;
+	border-bottom: 1px solid #E7E7E7;
+}
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+	color: #000;
+	font-weight: normal;
+}
+strong {
+	font-style: normal;
+	font-weight: bold;
+}
+pre, code, .path {
+	font-size: .9em;
+	font-family: Courier, monospace;
+}
+table, p { margin: .5em 0 1em; }
+
+.tag {
+	background: #EEE;
+	color: #666;
+	display: -moz-inline-stack;
+	display: inline-block;
+	font-size: .9em;
+	line-height: 1.4em;
+	margin: .2em .1em;
+	padding: .1em .8em .1em;
+	text-shadow: 0 1px 0 #FFF;
+	@borderRadius(1em);
+	@boxShadow(0 1px 2px rgba(0,0,0,.2), inset 0 -1px 1px #F7F7F7);
+	@verticalGradient(#FFF; #EEE);
+}
+.ie-lt8 .tag { display: inline; zoom: 1; }
+a.tag { text-decoration: none; }
+a.tag:after { content: ' ›'; font-weight: bold; }
+
+/**/
+#container {
+	margin: 1em auto;
+	width: 500px;
+}
+#container h1 { border-bottom: 2px groove #FFF; }
+
+table td, table th { text-align: left; vertical-align: top; }
+table td { color: #666; }
+table th { width: 150px; }
+table td { width: 350px; overflow: visible; }

@@ -1,0 +1,77 @@
+#Mutualisé sans domaine
+#RewriteBase	/[~user]/nude/
+
+#Retire les PHPSESSID en fin d'url
+SetEnv SESSION_USE_TRANS_SID 0
+
+#Empèche le listing des dossiers
+Options -Indexes
+
+#Encodage du text en utf-8
+AddDefaultCharset UTF-8
+
+#Request vars
+<IfModule mod_php4.c>
+    php_flag magic_quotes_gpc Off
+    php_flag track_vars On
+    php_flag register_globals Off
+	php_value mbstring.internal_encoding UTF-8
+</IfModule>
+<IfModule mod_php5.c>
+    php_flag magic_quotes_gpc Off
+    php_flag track_vars On
+    php_flag register_globals Off
+	php_value mbstring.internal_encoding UTF-8
+	# À voir : mbstring.encoding_translation 1
+</IfModule>
+
+#Désactivation des Etag
+<IfModule mod_headers.c>
+	Header unset ETag
+</IfModule>
+FileETag none
+
+#Type MIME (probleme avec les fonts)
+<IfModule mod_mime.c>
+	AddType application/json	.json 
+	AddType application/x-font	.eot .otf .svg .ttf .woff
+	AddType image/svg+xml		.svg
+	AddType text/css			.css
+	AddType text/javascript		.js
+	AddType text/x-component	.htc
+	AddType video/x-flv			.flv
+</IfModule>
+
+#Compression Gzip Deflate
+<IfModule mod_deflate.c>
+	AddOutputFilter DEFLATE js css html txt php
+</IfModule>
+
+#Expires
+<IfModule mod_expires.c>
+	ExpiresActive On  
+	<FilesMatch "\.(js|css|htm|pdf|swf|flv|gif|jpg|jpeg|png|ico|eot|otf|svg|ttf|woff)$">
+  		ExpiresDefault "access plus 29030400 seconds"
+	</FilesMatch>
+</IfModule>
+ 
+#Cache-Control
+<IfModule mod_headers.c>
+	<FilesMatch "\.(js|css|htm|pdf|swf|flv|gif|jpg|jpeg|png|ico|eot|otf|svg|ttf|woff)$"> 
+		Header set Cache-Control "max-age=29030400, public"
+	</FilesMatch>
+</IfModule>
+
+#URL rewriting
+RewriteEngine	On
+
+#Special files redirection
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(robot\.txt|sitemap\.xml|favicon\.ico|apple-touch-icon\.png)$ files/$1 [L]
+
+#Redirect if file doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [QSA]
+
+#Redirect if file is outside 'files' folder
+RewriteRule !^(files/) index.php [QSA]

@@ -1,0 +1,135 @@
+/* CSS3 */
+@backgroundClip(@box:border-box) {
+	 -o-background-clip: @box;
+   -moz-background-clip: @box;
+ -khtml-background-size: @box;
+-webkit-background-clip: @box;
+		background-clip: @box;
+}
+@backgroundOrigin(@box:padding-box) {
+	 -o-background-origin: @box;
+   -moz-background-origin: @box;
+ -khtml-background-origin: @box;
+-webkit-background-origin: @box;
+		background-origin: @box;
+}
+@backgroundSize(@size:auto) {
+	 -o-background-size: @size;
+   -moz-background-size: @size;
+ -khtml-background-size: @size;
+-webkit-background-size: @size;
+		background-size: @size;
+}
+
+/*	borderRadius
+ *	
+ *	Works on:	Chrome, FireFox 3.5+, Internet Explorer 9.0, Opera 10.5, Safari 3.0+
+ *	Needs test:	Konqueror
+ *
+ */
+@borderRadius(@tl: .5em; @tr: @tl; @br: @tl; @bl: @tr;    @p_tl; @p_tr: @p_tl; @p_br: @p_tl; @p_bl: @p_tr; ) {
+	 -webkit-border-top-left-radius: @tl @p_tl;
+	-webkit-border-top-right-radius: @tr @p_tr;
+ -webkit-border-bottom-right-radius: @br @p_br;
+  -webkit-border-bottom-left-radius: @bl @p_bl;
+  
+	  -khtml-border-top-left-radius: @tl @p_tl;
+	 -khtml-border-top-right-radius: @tr @p_tr;
+  -khtml-border-bottom-right-radius: @br @p_br;
+   -khtml-border-bottom-left-radius: @bl @p_bl;
+  
+		 -moz-border-radius-topleft: @tl @p_tl;
+		-moz-border-radius-topright: @tr @p_tr;
+	 -moz-border-radius-bottomright: @br @p_br;
+	  -moz-border-radius-bottomleft: @bl @p_bl;
+	  
+			 border-top-left-radius: @tl @p_tl;
+			border-top-right-radius: @tr @p_tr;
+		 border-bottom-right-radius: @br @p_br;
+		  border-bottom-left-radius: @bl @p_bl;
+	
+}
+
+/*	boxShadow
+ *	
+ *	Works on:	Chrome, FireFox 3.5+, Internet Explorer 9.0, Opera 10.5, Safari 3.0+
+ *	Needs test:	Konqueror
+ *
+ */
+ @boxShadow(@shadow) {
+	   -o-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+   -khtml-box-shadow: @shadow;
+  -webkit-box-shadow: @shadow;
+          box-shadow: @shadow;
+ }
+@dropShadow(@x:0; @y:1px; @blur:2px; @spread:0; @color:#000) {
+	@boxShadow(@x @y @blur @spread @color);
+}
+@insetShadow(@x:0; @y:1px; @blur:2px; @spread:0; @color:#000) {	
+	@boxShadow(inset @x @y @blur @spread @color);
+}
+@rotate(@deg: -22deg) {
+       -o-transform: rotate(@deg);
+     -moz-transform: rotate(@deg);
+   -khtml-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+}
+
+/*	transition
+ *	
+ *	Works on:	Chrome, FireFox 3.7+, Opera 10.5, Safari 3.2+
+ *	Needs test:	Konqueror
+ *
+ *	@property	none | all | [property]*
+ *	@duration	[time]*
+ *	@function	[ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>, <number>, <number>)]*
+ *	@delay	[time]*
+ *
+ */
+@transition(@property: all; @duration: .4s; @function; @delay: 0;) {
+	     -webkit-transition-property: @property;
+  		 -webkit-transition-duration: @duration;
+  -webkit-transition-timing-function: @function;
+		  	-webkit-transition-delay: @delay;
+		  	
+	      -khtml-transition-property: @property;
+  		  -khtml-transition-duration: @duration;
+   -khtml-transition-timing-function: @function;
+		  	 -khtml-transition-delay: @delay;
+		  	 
+			-moz-transition-property: @property;
+			-moz-transition-duration: @duration;
+	 -moz-transition-timing-function: @function;
+			   -moz-transition-delay: @delay;
+		  	 
+			  -o-transition-property: @property;
+			  -o-transition-duration: @duration;
+	   -o-transition-timing-function: @function;
+				 -o-transition-delay: @delay;
+		  	
+				 transition-property: @property;
+				 transition-duration: @duration;
+		  transition-timing-function: @function;
+					transition-delay: @delay;
+}
+@verticalGradient(@top: #FFF; @bottom: #000) {
+			  @gap: ((@bottom - @top) + (@top - @bottom));
+			 @base: @bottom - (@bottom - @top);
+			 
+  background-color: @gap / 2 + @base;
+  background-image: -moz-linear-gradient(top, @top, @bottom);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, @top),color-stop(1, @bottom));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr=@top, EndColorStr=@bottom);
+        -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr=@top, EndColorStr=@bottom);
+}
+@horizontalGradient(@left: #FFF; @right: #000) {
+			  @gap: ((@right - @left) + (@left - @right));
+			 @base: @right - (@right - @left);
+			 
+  background-color: @gap / 2 + @base;
+  background-image: -moz-linear-gradient(left, @left, @right);
+  background-image: -webkit-gradient(linear,left top,right top,color-stop(0, @left),color-stop(1, @right));
+            filter:  progid:DXImageTransform.Microsoft.gradient(StartColorStr=@left, EndColorStr=@right, GradientType=1);
+        -ms-filter:  progid:DXImageTransform.Microsoft.gradient(StartColorStr=@left, EndColorStr=@right, GradientType=1);
+}

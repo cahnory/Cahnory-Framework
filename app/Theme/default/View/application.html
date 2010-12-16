@@ -1,0 +1,15 @@
+<?php
+	
+	$classes	=	NULL;
+	
+	//	Classe de routage ex.: route0-index route1-actionName
+	$crumbs		=	array_pad((array)$this->system->router->getRouteCrumb(), 2, 'index');
+	foreach($crumbs as $key => $crumb) {
+		$classes	.=	' route'.$key.'-'.$crumb;
+	}
+	
+?>
+<div id="container" class="<?php echo $classes ?>">
+	<h1><strong>Cahnory</strong> framework</h1>
+	<?php echo $theme['module'] ?>
+</div>

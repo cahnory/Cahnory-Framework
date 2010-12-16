@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml" id="nojs"> 
+<head>
+	<meta charset="<?php echo $this->system->view->charset() ?>" />
+	<title><?php echo $theme['title'] ?></title>
+	<?php if(isset($theme['base'])): ?><base href="<?php echo $theme['base'] ?>" />
+	<?php endif; ?>
+	<?php foreach($theme['meta'] as $meta): ?>
+	<?php if(is_null($meta['http-equiv'])): ?>
+	<meta name="<?php echo $meta['name'] ?>" content="<?php echo $meta['content'] ?>" />
+	<?php endif; ?>
+	<?php endforeach; ?>
+	<script type="text/javascript">document.documentElement.id='js';</script>
+	<?php foreach($theme['css'] as $css): ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $css['filename'] ?>" media="<?php echo $css['media'] ?>" />
+	<?php endforeach; ?>
+	<?php if($icon = $this->system->view->data('favicon')): ?>
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo $icon ?>" />
+	<?php endif; ?>
+	<?php if($icon = $this->system->view->data('apple-touch-icon')): ?>
+	<link rel="apple-touch-icon" href="<?php echo $icon ?>"/>
+	<?php endif; ?>
+	<?php foreach($theme['js']['head'] as $js): ?>
+	<script type="text/javascript" src="<?php echo $js['filename'] ?>"></script>
+	<?php endforeach; ?>
+</head>
+<!--[if IE 5]><body class="ie ie5 lt-ie6 lt-ie7 lt-ie8 lt-ie9 lte-ie5 lte-ie6 lte-ie7 lte-ie8 lte-ie9 gte-ie5"><![endif]-->
+<!--[if IE 6]><body class="ie ie6 lt-ie7 lt-ie8 lt-ie9 lte-ie6 lte-ie7 lte-ie8 lte-ie9 gte-ie5 gte-ie6 gt-ie5"><![endif]-->
+<!--[if IE 7]><body class="ie ie7 lt-ie8 lt-ie9 lte-ie7 lte-ie8 lte-ie9 gte-ie5 gte-ie6 gte-ie7 gt-ie5 gt-ie6"><![endif]-->
+<!--[if IE 8]><body class="ie ie8 lt-ie9 lte-ie8 lte-ie9 gte-ie5 gte-ie6 gte-ie7 gte-ie8 gt-ie5 gt-ie6 gt-ie7"><![endif]-->
+<!--[if IE 9]><body class="ie ie9 lte-ie9 gte-ie5 gte-ie6 gte-ie7 gte-ie8 gte-ie9 gt-ie5 gt-ie6 gt-ie7 gt-ie8"><![endif]-->
+<!--[if !IE]><!--><body class="nie"><!--<![endif]-->
+	<?php
+	
+		if($file = $this->system->load->view('application')) {
+			require $file;
+		} else {
+			echo	$theme['module'];
+		}
+	
+	?>
+	<?php foreach($theme['js']['body'] as $js): ?>
+	<script type="text/javascript" src="<?php echo $js['filename'] ?>"></script>
+	<?php endforeach; ?>
+</body>
+</html>
