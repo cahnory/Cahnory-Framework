@@ -131,25 +131,33 @@
 			self::$_instances[]	=	$this;
 			//	Locations
 			$this->_systemPath	=	dirname(__FILE__);
-			$this->_appPath		=	realpath($this->_appPath);
+			//$this->_appPath		=	dirname($_SERVER['SCRIPT_NAME']);
+			$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
+								?	dirname($_SERVER['SCRIPT_FILENAME'])
+								:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
 			
 			//	Hide errors by default
 			ini_set('display_errors', 0);
 			error_reporting(0);
 			
 			//	Loader
-			$this->_helpers['load']	=	new Cahnroy_Loader();
+			$this->_helpers['load']	=	new Cahnory_Loader();
 			$this->_helpers['load']->addPath($this->_systemPath.DIRECTORY_SEPARATOR.'library');
 			$this->_helpers['load']->addPath($this->_appPath);
 			spl_autoload_register(array($this->_helpers['load'], 'autoLoad'));
 			
 			//	Request & route
-			$this->_helpers['request']	=	new Cahnroy_Request();
-			$this->_helpers['router']	=	new Cahnroy_Router($this->_helpers['request']->getRoute());
+			$this->_helpers['request']	=	new Cahnory_Request();
+			$this->_helpers['router']	=	new Cahnory_Router($this->_helpers['request']->getRoute());
 			
 			//	Module & view
 			$this->_helpers['view']		=	new Cahnory_View($this);
 			$this->_helpers['module']	=	new Cahnory_Module($this);
+			
+			//	Change root path to the appPath in CLI mode
+			if($this->_helpers['request']->isCLI()) {
+				chdir($this->_appPath);
+			}
 		}
 		
 		public	function	__get($name)
@@ -180,6 +188,9 @@
 				$path	=	realpath($path);
 				$this->_helpers['load']->swapPath($this->_appPath, $path);
 				$this->_appPath	=	$path;
+				if($this->_helpers['request']->isCLI()) {
+					chdir($this->_appPath);
+				}
 				return	true;
 			} else {
 				return	false;

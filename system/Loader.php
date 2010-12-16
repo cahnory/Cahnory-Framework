@@ -1,6 +1,6 @@
 <?php
 
-	class Cahnroy_Loader
+	class Cahnory_Loader
 	{
 		private	$_path		=	array();
 		private	$_helpers	=	array();

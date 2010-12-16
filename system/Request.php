@@ -29,7 +29,7 @@
 	 * @copyright  2010 François Germain
 	 * @license    http://www.opensource.org/licenses/mit-license.php
 	 */
-	class Cahnroy_Request
+	class Cahnory_Request
 	{
 		private	$_uri;
 		private	$_base;

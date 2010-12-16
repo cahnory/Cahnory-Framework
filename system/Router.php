@@ -29,7 +29,7 @@
 	 * @copyright  2010 François Germain
 	 * @license    http://www.opensource.org/licenses/mit-license.php
 	 */
-	class Cahnroy_Router
+	class Cahnory_Router
 	{
 		private	$_binds				=	array();
 		private	$_route;
