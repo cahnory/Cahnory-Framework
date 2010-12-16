@@ -1,7 +1,7 @@
 <?php
 	
 	//	Chargement et instanciation du system
-	require_once	'/Users/studio2/Dropbox/Server/cahnory/cahnory.php';
+	require_once	'../cahnory.php';
 	$system	=	new Cahnory();
 	
 	//	Chargement de la configuration
