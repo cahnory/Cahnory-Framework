@@ -31,58 +31,32 @@
 	 * @copyright  2010 François Germain
 	 * @license    http://www.opensource.org/licenses/mit-license.php
 	 */
-	class Helper_Constant
+	class Helper_CLI
 	{
-		private	$_name;
-		private	$_parent;
-		private	$_parentLinked;
-		private	$_constants	=	array();
+		private	$system;
 
-		public	function	__construct($system, $constants = array(), Helper_Constant $parent = NULL, $name = NULL)
+		public	function	__construct($system, $config)
 		{
-			$this->_parent	=	$parent;
-			$this->_name	=	$name;
-			if(is_array($constants) && !empty($constants)) {
-				$this->_constants	=	$constants;
-				$this->_linkParent();
+			$this->system = $system;
+		}
+		
+		public	function	input()
+		{
+			return	trim(fgets(STDIN));
+		}
+		
+		public	function	read($resource, $filters = array())
+		{
+			if($filters) {
+				return	readfile('php://filter/'.implode('|', $filters).'/resource='.$resource);
+			} else {
+				return	readfile('php://filter/resource='.$resource);
 			}
 		}
 		
-		public	function	__get($name)
+		public	function	write($resource, $string, $filters = array())
 		{
-			return	array_key_exists($name, $this->_constants)
-				?	$this->_constants[$name]
-				:	new Helper_Constant(NULL, array(), $this, $name);
-		}
-		
-		public	function	__set($name, $value)
-		{
-			if(!array_key_exists($name, $this->_constants)) {
-				$this->_constants[$name]	=	$value;
-				$this->_linkParent();
-			}
-		}
-		
-		private	function	_linkParent()
-		{
-			if($this->_parent && $this->_parentLinked !== true) {
-				$this->_parent->__set($this->_name, $this);
-				$this->_parentLinked	=	true;
-			}
-		}
-		
-		public	function	set($name, $value)
-		{
-			if(!array_key_exists($name, $this->_constants)) {
-				$this->_constants[$name]	=	$value;
-				return	true;
-			}
-			return	false;
-		}
-		
-		public	function	defined()
-		{
-			return	!empty($_constants);
+			return	file_put_contents('php://filter/write='.implode('|', $filters).'/resource='.$resource, $string);
 		}
 	}
 

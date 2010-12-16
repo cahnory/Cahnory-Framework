@@ -128,20 +128,27 @@
 		
 		public	function	__construct()
 		{
-			self::$_instances[]	=	$this;
-			//	Locations
 			$this->_systemPath	=	dirname(__FILE__);
-			//$this->_appPath		=	dirname($_SERVER['SCRIPT_NAME']);
-			$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
-								?	dirname($_SERVER['SCRIPT_FILENAME'])
-								:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
+			self::$_instances[]	=	$this;
+			
+			if(php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR'])) {
+				if(isset($_SERVER['argv'][1])) {
+					$_SERVER['REDIRECT_URL']	=	$_SERVER['argv'][1];
+				}
+				$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);
+				chdir($this->_appPath);
+			} else {
+				$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
+									?	dirname($_SERVER['SCRIPT_FILENAME'])
+									:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
+			}
 			
 			//	Hide errors by default
 			ini_set('display_errors', 0);
 			error_reporting(0);
 			
 			//	Loader
-			$this->_helpers['load']	=	new Cahnory_Loader();
+			$this->_helpers['load']		=	new Cahnory_Loader();
 			$this->_helpers['load']->addPath($this->_systemPath.DIRECTORY_SEPARATOR.'library');
 			$this->_helpers['load']->addPath($this->_appPath);
 			spl_autoload_register(array($this->_helpers['load'], 'autoLoad'));
@@ -153,11 +160,6 @@
 			//	Module & view
 			$this->_helpers['view']		=	new Cahnory_View($this);
 			$this->_helpers['module']	=	new Cahnory_Module($this);
-			
-			//	Change root path to the appPath in CLI mode
-			if($this->_helpers['request']->isCLI()) {
-				chdir($this->_appPath);
-			}
 		}
 		
 		public	function	__get($name)
@@ -227,7 +229,7 @@
 				$this->_trigger('viewLoaded');
 				
 				//	Module
-				$moduleName	=	$this->_helpers['router']->getRoutePath(0,1);			
+				$moduleName	=	$this->_helpers['router']->getRoutePath(0,1);
 				if($this->module->dispatch($moduleName) === false) {
 					$this->_trigger('dispatchError', false);
 				} else {
@@ -372,7 +374,7 @@
 		}
 	}
 	
-	//	Last instance shortcut
+	//	Last instance shortcut (deprecated, func name is subject to change)
 	function	C($i = 0) { return Cahnory::instance($i); }
 
 ?>

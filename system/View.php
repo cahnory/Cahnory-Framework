@@ -163,7 +163,7 @@
 				return	false;
 			
 			extract($this->_views[$format]);
-			
+		
 			$class	=	'View_'.$type;
 			if(!$this->system->load->class($class)) {
 				return	false;
@@ -197,7 +197,6 @@
 		public	function	put($viewName, array $data = array(), $autoType = true)
 		{
 			if(($result = $this->execute($viewName, $data, $autoType)) !== false) {
-				var_dump($result);
 				$this->content($this->content().$result);
 				return	true;
 			} else {
