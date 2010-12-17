@@ -126,21 +126,25 @@
 			'load', 'request', 'router', 'module', 'view'
 		);
 		
+		/**
+	     *	The request modifiers
+	     *
+	     *	@var array
+	     *	@access	private
+	     */
+		private	$_requestModifiers	=	array(
+			'server' => array(), 'get' => array(), 'post' => array(), 'files' => array(), 'args' => array()
+		);
+		
 		public	function	__construct()
 		{
 			$this->_systemPath	=	dirname(__FILE__);
 			self::$_instances[]	=	$this;
 			
 			if(php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR'])) {
-				if(isset($_SERVER['argv'][1])) {
-					$_SERVER['REDIRECT_URL']	=	$_SERVER['argv'][1];
-				}
-				$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);
-				chdir($this->_appPath);
+				$this->_initCLI();
 			} else {
-				$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
-									?	dirname($_SERVER['SCRIPT_FILENAME'])
-									:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
+				$this->_initApache();
 			}
 			
 			//	Hide errors by default
@@ -154,7 +158,13 @@
 			spl_autoload_register(array($this->_helpers['load'], 'autoLoad'));
 			
 			//	Request & route
-			$this->_helpers['request']	=	new Cahnory_Request();
+			$this->_helpers['request']	=	new Cahnory_Request(
+				$this->_requestModifiers['server'],
+				$this->_requestModifiers['get'],
+				$this->_requestModifiers['post'],
+				$this->_requestModifiers['files'],
+				$this->_requestModifiers['args']
+			);
 			$this->_helpers['router']	=	new Cahnory_Router($this->_helpers['request']->getRoute());
 			
 			//	Module & view
@@ -271,6 +281,54 @@
 		{
 			$names	=	func_get_args();
 			$this->_lockedHelpers	=	array_merge($this->_lockedHelpers, $names);
+		}
+		
+		public	function	_initCLI()
+		{	
+			if(isset($_SERVER['argv'][1])) {
+				$string	=	$_SERVER['argv'][1];
+				
+				//	Parsing de la chaine de paramètres '[<param:value>[<param2:value>]]'
+				preg_match_all(
+					'#<[\s]*([^:>]+)[\s]*:[\s]*(((?<!\\\)\\\(\\\\\\\)*>|.(?!>))+.)[\s]*>#',
+					$string,
+					$match
+				);
+				
+				//	Param array ou route string
+				if(sizeof($match[2])) {
+					$params	=	array_combine($match[1], $match[2]);
+				} else {
+					$params	=	array('route'	=>	$string);
+				}
+					
+				if(array_key_exists('protocol', $params))
+					$this->_requestModifiers['server']['SERVER_PROTOCOL']	=	$params['protocol'];
+					
+				if(array_key_exists('host', $params))
+					$this->_requestModifiers['server']['HTTP_HOST']			=	$params['host'];
+				else
+					$this->_requestModifiers['server']['HTTP_HOST']			=	'localhost';
+					
+				if(array_key_exists('base', $params))
+					$this->_requestModifiers['server']['SCRIPT_NAME']		=	DIRECTORY_SEPARATOR.trim($params['base'],'\/').DIRECTORY_SEPARATOR;
+				else
+					$this->_requestModifiers['server']['SCRIPT_NAME']		=	DIRECTORY_SEPARATOR;
+					
+				if(array_key_exists('route', $params))
+					$this->_requestModifiers['server']['REDIRECT_URL']		=	$this->_requestModifiers['server']['SCRIPT_NAME'].trim($params['route'],'/');
+				
+				$this->_requestModifiers['server']['SCRIPT_NAME']	.=	'index.php';
+			}
+			$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);
+			chdir($this->_appPath);
+		}
+		
+		public	function	_initApache()
+		{
+			$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
+								?	dirname($_SERVER['SCRIPT_FILENAME'])
+								:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
 		}
 		
 		/*	Load and assign a helper

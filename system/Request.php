@@ -56,21 +56,13 @@
 			$post			=	$post	=== NULL ? $_POST	: $post;
 			$files			=	$files	=== NULL ? $_FILES	: $files;
 			$this->_args	=	$args	=== NULL ? $server['argv']	: $args;
-			
 			$this->_isAjax	=	isset($server['HTTP_X_REQUESTED_WITH'])
-					       	&&	$server['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
-					       	
-			$this->_isCLI	=	php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR']);
-			
-			//$this->_uri			=	urldecode($server['REQUEST_URI']);
-			$this->_uri			=	'/'.trim(isset($server['REDIRECT_URL']) ? $server['REDIRECT_URL'] : $server['REQUEST_URI'], '/');//On test
-			if($this->_isCLI) {
-				$this->_base	=	'/';
-			} else {
-				$this->_base	=	trim(dirname($server['SCRIPT_NAME']),'/');
+					       	&&	$server['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';		       	
+			$this->_isCLI	=	php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR']);			
+			$this->_uri		=	'/'.trim(isset($server['REDIRECT_URL']) ? $server['REDIRECT_URL'] : $server['REQUEST_URI'], '/');//On test
+			$this->_base	=	trim(dirname($server['SCRIPT_NAME']),'/');
 				if(strlen($this->_base))	$this->_base	.=	'/';
-			}
-			$this->_host		=	$server['HTTP_HOST'];
+			$this->_host		=	$server['HTTP_HOST'];			
 			$this->_protocol	=	(substr($server['SERVER_PROTOCOL'], 0, 5) == 'https' ? 'https' : 'http').'://';
 			$this->_method		=	$server['REQUEST_METHOD'];			
 			if(get_magic_quotes_gpc()) {
