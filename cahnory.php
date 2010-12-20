@@ -133,7 +133,7 @@
 	     *	@access	private
 	     */
 		private	$_requestModifiers	=	array(
-			'server' => array(), 'get' => array(), 'post' => array(), 'files' => array(), 'args' => array()
+			'server' => array(), 'get' => NULL, 'post' => NULL, 'files' => NULL, 'args' => NULL
 		);
 		
 		public	function	__construct()
