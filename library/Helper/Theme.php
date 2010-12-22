@@ -108,6 +108,9 @@
 				$pattern	=	isset($this->_patterns['.']) ? $this->_patterns['.'] : NULL;
 			}
 			
+			if($pattern === NULL)
+				return	$this->system->view->content();
+			
 			$theme			=	array(
 				'title'		=>	$this->getTitle(),
 				'meta'		=>	$this->getMeta(),
