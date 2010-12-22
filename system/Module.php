@@ -99,8 +99,14 @@
 		 *	@acces public
 		 *	@see Cahnory_Module::$_moduleName
 		 */
-		public	function	name()
+		public	function	name($module = NULL)
 		{
+			if($module !== NULL) {
+				if(($route = array_search($module, $this->_modules)) === false)
+					return	NULL;
+				
+				return	$this->_moduleNames[$route];
+			}
 			return	$this->_moduleName;
 		}
 		
@@ -111,8 +117,13 @@
 		 *	@acces public
 		 *	@see Cahnory_Module::$_moduleRoute
 		 */
-		public	function	route()
+		public	function	route($module = NULL)
 		{
+			if($module !== NULL) {
+				if(($route = array_search($module, $this->_modules)) === false)
+					return	NULL;
+				return	$route;
+			}
 			return	$this->_moduleRoute;
 		}
 		
@@ -125,6 +136,12 @@
 		 */
 		public	function	file()
 		{
+			if($module !== NULL) {
+				if(($route = array_search($module, $this->_modules)) === false)
+					return	NULL;
+				
+				return	$this->_moduleFiles[$route];
+			}
 			return	$this->_moduleFile;
 		}
 		
@@ -153,7 +170,7 @@
 		public	function get($route)
 		{
 			return	array_key_exists($route, $this->_modules)
-				?	$this->_modulesNames[$route]
+				?	$this->_modules[$route]
 				:	false;
 		}
 		
