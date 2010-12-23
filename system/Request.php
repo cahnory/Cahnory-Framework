@@ -58,7 +58,7 @@
 			$this->_args	=	$args	=== NULL ? $server['argv']	: $args;
 			$this->_isAjax	=	isset($server['HTTP_X_REQUESTED_WITH'])
 					       	&&	$server['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';		       	
-			$this->_isCLI	=	php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR']);			
+			$this->_isCLI	=	isset($_SERVER['SHELL']);
 			$this->_uri		=	'/'.trim(isset($server['REDIRECT_URL']) ? $server['REDIRECT_URL'] : $server['REQUEST_URI'], '/');//On test
 			$this->_base	=	trim(dirname($server['SCRIPT_NAME']),'/');
 				if(strlen($this->_base))	$this->_base	.=	'/';

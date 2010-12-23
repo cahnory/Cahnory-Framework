@@ -8,7 +8,7 @@
 	if($system->request->isCLI()) {
 		$system->Debug->addRegistrar(new Helper_Debug_FileRegistrar('Debug/cli.log'));
 	} else {
-		$system->Debug->addRegistrar(new Helper_Debug_FileRegistrar('Debug/apache.log'));
+		$system->Debug->addRegistrar(new Helper_Debug_FileRegistrar('Debug/gui.log'));
 	}
 	$system->Debug->displayFatalError(true);
 	

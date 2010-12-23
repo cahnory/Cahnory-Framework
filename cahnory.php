@@ -141,10 +141,10 @@
 			$this->_systemPath	=	dirname(__FILE__);
 			self::$_instances[]	=	$this;
 			
-			if(php_sapi_name() == 'cli' && empty($_SERVER['REMOTE_ADDR'])) {
+			if(isset($_SERVER['SHELL'])) {
 				$this->_initCLI();
 			} else {
-				$this->_initApache();
+				$this->_initGUI();
 			}
 			
 			//	Hide errors by default
@@ -320,11 +320,17 @@
 				
 				$this->_requestModifiers['server']['SCRIPT_NAME']	.=	'index.php';
 			}
-			$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);
+			
+			//	Search for the script real filename
+			if(isset($_SERVER['PWD']))
+				$this->_appPath	=	dirname($_SERVER['PWD']);			//	cgi
+			elseif(!isset($_SERVER['SCRIPT_NAME']))
+				$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);	//	cli
+				
 			chdir($this->_appPath);
 		}
 		
-		public	function	_initApache()
+		public	function	_initGUI()
 		{
 			$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
 								?	dirname($_SERVER['SCRIPT_FILENAME'])
