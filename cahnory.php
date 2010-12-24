@@ -322,11 +322,14 @@
 			}
 			
 			//	Search for the script real filename
-			if(isset($_SERVER['PWD']))
-				$this->_appPath	=	dirname($_SERVER['PWD']);			//	cgi
-			elseif(!isset($_SERVER['SCRIPT_NAME']))
+			if(isset($_SERVER['SCRIPT_NAME']))
 				$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);	//	cli
-				
+			elseif(isset($_SERVER['PWD']))								//	cgi
+				$this->_appPath	=	DIRECTORY_SEPARATOR.trim(
+						trim($_SERVER['PWD'], DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR
+					.	trim(dirname(DIRECTORY_SEPARATOR.$_SERVER['argv'][0]), DIRECTORY_SEPARATOR)
+					,	DIRECTORY_SEPARATOR);
+					
 			chdir($this->_appPath);
 		}
 		
