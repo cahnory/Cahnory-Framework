@@ -43,6 +43,22 @@
 			return	preg_replace('#\?[^?\#]*#', '', $uri);
 		}
 		
+		//	Source : http://julp.developpez.com/php/curl/#L3.1.2
+		function fetch($url, $timeout = 10, $userpwd = '')
+		{
+		    $cURL	=	curl_init($url);
+		    curl_setopt($cURL, CURLOPT_TIMEOUT,			$timeout);
+		    curl_setopt($cURL, CURLOPT_CONNECTTIMEOUT,	$timeout);
+		    curl_setopt($cURL, CURLOPT_RETURNTRANSFER,	true);
+		    if ($userpwd) {
+		        curl_setopt($cURL, CURLOPT_USERPWD,	$userpwd);
+		    }
+		    $data	=	curl_exec($cURL);
+		    curl_close($cURL);
+		
+		    return $data;
+		}
+		
 		static	public	function	queryToArray($query)
 		{
 			$array	=	array();

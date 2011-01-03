@@ -61,6 +61,37 @@
 			return	$array;
 		}
 		
+		function sortBy($array, $on, $order = 'ASC')
+		{
+		    $new_array = array();
+		    $sortable_array = array();
+		
+		    if (count($array) > 0) {
+		        foreach ($array as $k => $v) {
+		            if (is_array($v)) {
+		                foreach ($v as $k2 => $v2) {
+		                    if ($k2 == $on) {
+		                        $sortable_array[$k] = $v2;
+		                    }
+		                }
+		            } else {
+		                $sortable_array[$k] = $v;
+		            }
+		        }
+		
+		        if ($order == 'DESC') {
+					arsort($sortable_array);
+				} else {
+					asort($sortable_array);
+		        }		
+		        foreach ($sortable_array as $k => $v) {
+		            $new_array[$k] = $array[$k];
+		        }
+		    }
+		
+		    return $new_array;
+		}
+		
 		/*
 			Parcour un tableau à l'aide de sélecteur correspondant aux valeurs
 			possibles de l'attribut html name

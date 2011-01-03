@@ -56,6 +56,16 @@
 		private	$_appPath		=	'.';
 		
 		/**
+	     *	The root path (www/htdocs)
+	     *
+	     *	The path where all app files are.
+	     *
+	     *	@var string
+	     *	@access	private
+	     */
+		private	$_rootPath		=	'.';
+		
+		/**
 	     *	The system path
 	     *
 	     *	The path to this file
@@ -209,6 +219,17 @@
 			}
 		}
 		
+		/*	Getter for the root path
+		 *
+		 *	@return	string the root path is returned
+		 *
+		 *	@acces public
+		 */
+		public	function	rootPath()
+		{
+			return	$this->_rootPath;
+		}
+		
 		/*	Link a function to an event
 		 *
 		 *	@param string $event    the event name
@@ -326,18 +347,23 @@
 				$this->_appPath	=	dirname($_SERVER['SCRIPT_NAME']);	//	cli
 			elseif(isset($_SERVER['PWD']))								//	cgi
 				$this->_appPath	=	DIRECTORY_SEPARATOR.trim(
-						trim($_SERVER['PWD'], DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR
+						isset($_SERVER['OLDPWD'])
+						?	trim($_SERVER['PWD'], DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR
+						:	NULL
 					.	trim(dirname(DIRECTORY_SEPARATOR.$_SERVER['argv'][0]), DIRECTORY_SEPARATOR)
 					,	DIRECTORY_SEPARATOR);
 					
 			chdir($this->_appPath);
+			
+			$this->_rootPath	=	substr($this->_appPath,0, strlen($this->_appPath) - strlen(dirname($this->_requestModifiers['server']['SCRIPT_NAME'])));
 		}
 		
 		public	function	_initGUI()
 		{
+			$this->_rootPath	=	$_SERVER['DOCUMENT_ROOT'];
 			$this->_appPath		=	isset($_SERVER['SCRIPT_FILENAME'])
 								?	dirname($_SERVER['SCRIPT_FILENAME'])
-								:	dirname($_SERVER['DOCUMENT_ROOT'].$_SERVER['SCRIPT_NAME']);
+								:	dirname($this->_rootPath.$_SERVER['SCRIPT_NAME']);
 		}
 		
 		/*	Load and assign a helper

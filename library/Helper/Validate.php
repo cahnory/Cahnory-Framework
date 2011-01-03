@@ -82,6 +82,12 @@
 		{
 			return	$value <= $max;
 		}
+		
+		static	public	function URL($value)
+		{
+			/*	Tests sur la composition de l'email	*/
+			return	filter_var($value, FILTER_VALIDATE_URL) !== false;
+		}
 	}
 	
 	class Helper_Validate_Form

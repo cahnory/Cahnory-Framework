@@ -73,6 +73,41 @@
 			$this->_escape		=	$escape;
 		}
 		
+		public	function	addCol($value, $col)
+		{
+			$col	=	(int)$col;
+			for($i = 0; $row = $this->getRow($i); $i++) {
+				if(is_array($value)) {
+					$cell	=	array_key_exists($i, $value) ? $value[$i] : '';
+				} else {
+					$cell	=	$value;
+				}
+				if($col >= sizeof($row)) {
+					$row		=	array_pad($row, $col, NULL);
+					$row[$col]	=	$cell;
+				} else {
+					array_splice($row, $col, 0, $cell);
+				}
+				$this->setRow($i, $row);
+			}
+		}
+		
+		public	function	addRow($value, $row = NULL)
+		{
+			if($row === NULL) {
+				//	Chargement des lignes non utilisées
+				if(!$this->_closed)	$this->getRow(-1);
+				$this->_array[]	=	(array)$value;
+			} else {
+				if($this->getRow($row) === false) {
+					$this->_array		=	array_pad($this->_array, $row, array(NULL));
+					$this->_array[$row]	=	(array)$value;
+				} else {
+					array_splice($this->_array, $row, 0, (array)$value);
+				}
+			}
+		}
+		
 		static	public	function	createFromFile($filename, $delimiter = ';', $enclosure = '"', $escape = '\\', $length = 0)
 		{
 			//	Le fichier est introuvable
@@ -206,39 +241,18 @@
 			$this->_array[$row]	=	(array)$value;
 		}
 		
-		public	function	addRow($value, $row = NULL)
+		public	function	toString()
 		{
-			if($row === NULL) {
-				//	Chargement des lignes non utilisées
-				if(!$this->_closed)	$this->getRow(-1);
-				$this->_array[]	=	(array)$value;
-			} else {
-				if($this->getRow($row) === false) {
-					$this->_array		=	array_pad($this->_array, $row, array(NULL));
-					$this->_array[$row]	=	(array)$value;
-				} else {
-					array_splice($this->_array, $row, 0, (array)$value);
-				}
-			}
-		}
-		
-		public	function	addCol($value, $col)
-		{
-			$col	=	(int)$col;
+			$string		=	NULL;
+			$pattern	=	'#['.preg_quote($this->_enclosure.$this->_escape, '#').']#';
 			for($i = 0; $row = $this->getRow($i); $i++) {
-				if(is_array($value)) {
-					$cell	=	array_key_exists($i, $value) ? $value[$i] : '';
-				} else {
-					$cell	=	$value;
+				if($i !== 0)	$string	.=	"\r\n";
+				foreach($row as $k => $col) {
+					if($k !== 0)	$string	.=	$this->_delimiter;
+					$string	.=	$this->_enclosure.preg_replace($pattern, $this->_escape.'$0', $col).$this->_enclosure;
 				}
-				if($col >= sizeof($row)) {
-					$row		=	array_pad($row, $col, NULL);
-					$row[$col]	=	$cell;
-				} else {
-					array_splice($row, $col, 0, $cell);
-				}
-				$this->setRow($i, $row);
 			}
+			return	$string;
 		}
 	}
 

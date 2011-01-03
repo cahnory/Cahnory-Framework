@@ -36,10 +36,10 @@
 		static	private	$_root;
 		static	private	$_base;
 		
-		public	function __construct()
+		public	function __construct(Cahnory $system)
 		{
-			self::$_root	=	$_SERVER['DOCUMENT_ROOT'];
-			self::$_base	=	trim(preg_replace('#^'.preg_quote(self::$_root).'#','',dirname($_SERVER['SCRIPT_FILENAME'])),'/');
+			self::$_root	=	$system->appPath();
+			self::$_base	=	trim(substr($system->appPath(), strlen($system->rootPath())), DIRECTORY_SEPARATOR);
 		}
 		
 		static	public	function exists($filename)

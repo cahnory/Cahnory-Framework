@@ -64,8 +64,8 @@
 		public	function get($name, $config = NULL)
 		{
 			$filename	=	$this->system->load->getFile(array(
-				'Widget/'.$name.'.php',
-				'Widget/'.$name.'/controller.php'
+				'Widget'.DIRECTORY_SEPARATOR.$name.'.php',
+				'Widget'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR.'controller.php'
 			));
 			
 			//	Widget introuvable
@@ -77,7 +77,7 @@
 			//Widget introuvable
 			if(!class_exists($class))	return false;
 			
-			$path	=	dirname($filename).'/';
+			$path	=	dirname($filename).DIRECTORY_SEPARATOR;
 			$this->system->load->addPathAfter($this->system->appPath(), $path);
 			$this->_widgetFile	=	$filename;
 			$this->_widgetName	=	$name;
@@ -96,9 +96,11 @@
 			if(strstr($filename, '<widget>')) {
 				$name	=	$this->system->Widget->name();
 				return	array(
-					str_replace(array('<widget>.','<widget>'), $name, $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget.'.$name, $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget/'.$name, $filename)
+					str_replace(array('<widget>.','<widget>'), $name.'.', $filename),
+					str_replace(array('<widget>.','<widget>'), 'widget.'.$name.'.', $filename),
+					str_replace(array('<widget>.','<widget>'), 'widget.'.$name.DIRECTORY_SEPARATOR, $filename),
+					str_replace(array('<widget>.','<widget>'), 'widget'.DIRECTORY_SEPARATOR.$name.'.', $filename),
+					str_replace(array('<widget>.','<widget>'), 'widget'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
 				);
 			}
 		}

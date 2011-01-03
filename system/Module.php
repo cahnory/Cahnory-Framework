@@ -283,8 +283,8 @@
 					str_replace(array('<module>.','<module>'), $name.'.', $filename),
 					str_replace(array('<module>.','<module>'), 'module.'.$name.'.', $filename),
 					str_replace(array('<module>.','<module>'), 'module.'.$name.DIRECTORY_SEPARATOR, $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.''.$name.'.', $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.''.$name.DIRECTORY_SEPARATOR, $filename)
+					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.$name.'.', $filename),
+					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
 				);
 			}
 		}
