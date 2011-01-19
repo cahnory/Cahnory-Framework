@@ -46,7 +46,7 @@
 			$base   =	rtrim($base, '/').'/';
 			
 			//	href, src, background attributes
-			$html   =	preg_replace('#(<[^>]+(href|src|background)=")(?![a-z]+:)/?([^/"][^"]*)?"#is', '$1'.$base.'$3"', $html);
+			$html   =	preg_replace('#(<[^>]+(href|src|background|data)=")(?![a-z]+:)/?([^/"][^"]*)?"#is', '$1'.$base.'$3"', $html);
 			//	style attributes url(), src()
 			$html   =	preg_replace('#(<[^>]+style="[^"]*(url|src)\([\s\']*)(?![a-z]+:)/?([^)]+)\)#is', '$1'.$base.'$3)', $html);
 			//	style tag

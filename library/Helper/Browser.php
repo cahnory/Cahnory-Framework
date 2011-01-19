@@ -33,28 +33,36 @@
 	 */
 	class Helper_Browser
 	{
+		private	$_userAgent;
 		private	$_name;
 		private	$_engine;
 		private	$_version;
 		
+		public	function	__construct($system, $options = array())
+		{
+			$this->_userAgent	=	isset($options['userAgent'])
+								?	$options['userAgent']
+								:	$_SERVER['HTTP_USER_AGENT'];
+		}
+		
 		public	function	engine()
 		{
 			if($this->_engine === NULL)
-				$this->_engine	=	self::getEngineFromUA($_SERVER['HTTP_USER_AGENT']);
+				$this->_engine	=	self::getEngineFromUA($this->_userAgent);
 			return	$this->_engine;
 		}
 		
 		public	function	name()
 		{
 			if($this->_name === NULL)
-				$this->_name	=	self::getNameFromUA($_SERVER['HTTP_USER_AGENT']);
+				$this->_name	=	self::getNameFromUA($this->_userAgent);
 			return	$this->_name;
 		}
 		
 		public	function	version()
 		{
 			if($this->_version === NULL)
-				$this->_version	=	self::getVersionFromUA($_SERVER['HTTP_USER_AGENT']);
+				$this->_version	=	self::getVersionFromUA($this->_userAgent);
 			return	$this->_version;
 		}
 		

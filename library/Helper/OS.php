@@ -33,20 +33,28 @@
 	 */
 	class Helper_OS
 	{
+		private	$_userAgent;
 		private	$_name;
 		private	$_version;
+		
+		public	function	__construct($system, $options = array())
+		{
+			$this->_userAgent	=	isset($options['userAgent'])
+								?	$options['userAgent']
+								:	$_SERVER['HTTP_USER_AGENT'];
+		}
 		
 		public	function	name()
 		{
 			if($this->_name === NULL)
-				$this->_name	=	self::getNameFromUA($_SERVER['HTTP_USER_AGENT']);
+				$this->_name	=	self::getNameFromUA($this->_userAgent);
 			return	$this->_name;
 		}
 		
 		public	function	version()
 		{
 			if($this->_version === NULL)
-				$this->_version	=	self::getVersionFromUA($_SERVER['HTTP_USER_AGENT']);
+				$this->_version	=	self::getVersionFromUA($this->_userAgent);
 			return	$this->_version;
 		}
 		
