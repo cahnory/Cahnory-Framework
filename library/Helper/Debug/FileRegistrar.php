@@ -41,8 +41,6 @@
 		{
 			$this->_format		=	$format;
 			$this->_filename	=	$filename;
-			
-			date_default_timezone_set(date_default_timezone_get());
 		}
 		
 		public	function	registerError($level, $string, $file, $line)
@@ -66,12 +64,12 @@
 			if($this->_xdebugDump || $this->_xdebugDump = (substr($dump, 12, 15) == 'xdebug-var-dump')) {
 				$dump	=	strip_tags($dump);
 			}			
-			return	$this->_register($dump."\r\n");
+			return	$this->_register($dump."\n");
 		}
 		
 		private	function	_register($string)
 		{
-			$handle	=	fopen($this->_filename, "a+");
+			$handle	=	fopen($this->_filename, "a+b");
 			
 			//	Ouverture/création du fichier impossible
 			if(!$handle)	return false;
@@ -102,17 +100,17 @@
 				'string'	=>	$string,
 				'file'		=>	$file,
 				'line'		=>	$line
-			))."\r\n";
+			))."\n";
 		}
 		
 		private	function	_logFormat($level, $string, $file, $line)
 		{
-			return	date(DATE_W3C).' Level='.$level.' file='.$file.' line='.$line.' string='.$string."\r\n";
+			return	date(DATE_W3C).' Level='.$level.' file='.$file.' line='.$line.' string='.$string."\n";
 		}
 		
 		private	function	_comfortFormat($level, $string, $file, $line)
 		{
-			return	date(DATE_W3C)."\r\nLevel=".$level."\r\nfile=".$file."\r\nline=".$line."\r\nstring=".$string."\r\n\r\n";
+			return	date(DATE_W3C)."\nLevel=".$level."\nfile=".$file."\nline=".$line."\nstring=".$string."\n\n";
 		}
 	}
 
