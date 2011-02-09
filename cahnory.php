@@ -161,6 +161,11 @@
 			ini_set('display_errors', 0);
 			error_reporting(0);
 			
+			//	Set default timezone
+			if(!$tz = ini_get('date.timezone') && !$tz = getenv('TZ'))
+				$tz	=	'Europe/London';	// GMT 0 by default			
+			date_default_timezone_set($tz);
+			
 			//	Loader
 			$this->_helpers['load']		=	new Cahnory_Loader();
 			$this->_helpers['load']->addPath($this->_systemPath.DIRECTORY_SEPARATOR.'library');
