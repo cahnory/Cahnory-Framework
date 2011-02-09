@@ -105,7 +105,7 @@
 				if(($route = array_search($module, $this->_modules)) === false)
 					return	NULL;
 				
-				return	$this->_moduleNames[$route];
+				return	$this->_modulesNames[$route];
 			}
 			return	$this->_moduleName;
 		}
