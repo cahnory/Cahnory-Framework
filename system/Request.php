@@ -72,7 +72,7 @@
 				$this->_get		=	$get;
 				$this->_post	=	$post;
 			}
-			$this->_files	=	self::normalizeFilesArray($files);
+			$this->_files	=	self::formatFilesArray($files);
 			$this->_input	=	array_merge($this->_get,$this->_post,$this->_files);
 	        $this->_parseURI();
 		}
@@ -221,26 +221,33 @@
 			Armonise l'arborescence du tableau $_FILES
 			sur le model de $_POST, $_GET
 		*/
-		private	static	function normalizeFilesArray() {		
-			if(empty($_FILES))	return	$_FILES;
-				
-			$output	=	array();		
-			foreach($_FILES as $parent => $file) {
-				$output[$parent]	=	array();
-				foreach($file as $attr => $tree) {
-					$cursor				=	&$output[$parent];
-					while(is_array($tree)) {
-						$key	=	key($tree);
-						$tree	=	$tree[$key];
-						if(!array_key_exists($key, $cursor)) {
-							$cursor[$key]	=	array();
-						}
-						$cursor			=	&$cursor[$key];
-					}
-					$cursor[$attr]	=	$tree;
+		private	static	function formatFilesArray(array $input) {
+			static	$depth	=	-1;
+			static	$stack	=	array(array());
+			static	$key;
+			
+			$depth++;
+			foreach($input as $name => $value) {
+				if($depth === 1) {
+					$key		=	$name;
+					$stack[0]	=	self::formatFilesArray($value);
+				} else {
+					if(!array_key_exists($name, $stack[0]))
+						$stack[0][$name]	=	array();
+					array_unshift($stack, &$stack[0][$name]);
+				}
+				if(is_array($value)) {
+					$stack[0]	=	self::formatFilesArray($value);
+				} else {
+					$stack[0][$key]	=	$value;	
+				}
+				if($depth !== 1) {
+					array_shift($stack);
 				}
 			}
-			return	$output;
+			$depth--;
+			
+			return	$stack[0];
 		}
 		
 		/*
