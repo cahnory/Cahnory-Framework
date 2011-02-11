@@ -93,14 +93,18 @@
 		
 		public	function	modifyViewFilename($filename)
 		{
-			if(strstr($filename, '<widget>')) {
-				$name	=	$this->system->Widget->name();
+			if(preg_match('#\<widget(?:\:([a-zA-Z_0-9]+))?>#', $filename, $m)) {
+				if(isset($m[1])) {
+					$name	=	$m[1];
+				} else {
+					$name	=	$this->system->Widget->name();
+				}				
 				return	array(
-					str_replace(array('<widget>.','<widget>'), $name.'.', $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget.'.$name.'.', $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget.'.$name.DIRECTORY_SEPARATOR, $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget'.DIRECTORY_SEPARATOR.$name.'.', $filename),
-					str_replace(array('<widget>.','<widget>'), 'widget'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
+					str_replace(array($m[0].'.',$m[0]), $name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'widget.'.$name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'widget.'.$name.DIRECTORY_SEPARATOR, $filename),
+					str_replace(array($m[0].'.',$m[0]), 'widget'.DIRECTORY_SEPARATOR.$name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'widget'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
 				);
 			}
 		}
