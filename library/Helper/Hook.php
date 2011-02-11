@@ -48,6 +48,8 @@
 		
 		public	function	get($name)
 		{
+			$this->system->trigger('hook.get');
+			$this->system->trigger('hook.get.'.$name);
 			return	array_key_exists($name, $this->_hooks) ? $this->_hooks[$name] : NULL;
 		}
 		
