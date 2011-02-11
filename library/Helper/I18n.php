@@ -60,9 +60,11 @@
 		public	function	__toString()
 		{
 			if($this->_parent !== NULL) {
-				return	(string)$this->_parent->get($this->_name);
+				if(($name = $this->_parent->get($this->_name)) !== NULL) {
+					return	$name;
+				}
 			}
-			return	'';
+			return	$this->_name;
 		}
 		
 		public	function	main($language)
@@ -115,7 +117,7 @@
 				foreach($files as $file) {
 					include	$file;
 				}
-			} elseif($name !== NULL) {
+			} elseif($files !== NULL) {
 				include $files;
 			} else {
 				return	false;
@@ -126,21 +128,16 @@
 		public	function	getFile($filename)
 		{
 			$filename	.=	'.php';
-			if(strstr($filename, '<module>')) {
-				$files	=	array(
-					'I18n/'.$filename,
-					'I18n/'.str_replace('<module>', 'module.'.$this->system->module->name(), $filename),
-					'I18n/'.str_replace('<module>', 'module.'.$this->system->module->route(), $filename)
-				);
-			} elseif(strstr($filename, '<widget>')) {
-				$files	=	array(
-					'I18n/'.$filename,
-					'I18n/'.str_replace('<widget>', $this->system->Widget->name(), $filename),
-					'I18n/'.str_replace('<widget>', 'widget.'.$this->system->Widget->name(), $filename)
-				);
-			} else {
-				$files	=	'I18n/'.$filename;
+			
+			$files	=	array();
+			if($modified = $this->system->module->modifyViewFilename('I18N/'.$filename)) {
+				$files	=	array_merge($files, $modified);
 			}
+			if($modified = $this->system->widget->modifyViewFilename('I18N/'.$filename)) {
+				$files	=	array_merge($files, $modified);
+			}
+			$files[]	=	'I18n/'.$filename;
+			
 			$files = $this->system->load->getFile($files);
 			return	$files;
 		}
