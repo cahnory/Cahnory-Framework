@@ -33,15 +33,15 @@
 	 */
 	class Helper_String
 	{
-		static	public	function	plural($n, $pluriel, $singulier = NULL, $null = NULL, $negatif = NULL) {
+		static	public	function	plural($n, $plural, $singular = NULL, $null = NULL, $negatif = NULL) {
 			if($n > 1) {
-				return	$pluriel;
+				return	$plural;
 			} elseif($n > 0) {
-				return	$singulier;
+				return	$singular;
 			} elseif($n == 0) {
-				return	$null;
+				return	$null !== NULL ? $null : ($singular !== NULL ? $singular : NULL);
 			} else {
-				return	$negatif;
+				return	$negatif !== NULL ? $negatif : ($null !== NULL ? $null : ($singular !== NULL ? $singular : NULL));
 			}
 		}
 		
