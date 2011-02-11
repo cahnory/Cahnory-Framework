@@ -102,7 +102,7 @@
 		public	function	name($module = NULL)
 		{
 			if($module !== NULL) {
-				if(($route = array_search($module, $this->_modules)) === false)
+				if(($route = array_search($module, $this->_modulesNames)) === false)
 					return	NULL;
 				
 				return	$this->_modulesNames[$route];
@@ -224,6 +224,7 @@
 			
 			//	Module défini
 			if(isset($this->_modules[$route])) {
+				$this->_setFocus($route);
 				return	$this->_modules[$route];
 				
 			//	AutoLoad
@@ -271,20 +272,25 @@
 		
 		public	function	modifyViewFilename($filename)
 		{
-			if(strstr($filename, '<module>')) {
-				$route	=	$this->system->module->route();
-				$name	=	$this->system->module->name();
+			if(preg_match('#\<module(?:\:([a-zA-Z_0-9]+))?>#', $filename, $m)) {
+				if(isset($m[1])) {
+					$route	=	$m[1];
+					$name	=	$this->system->module->name($m[1]);
+				} else {
+					$route	=	$this->system->module->route();
+					$name	=	$this->system->module->name();
+				}				
 				return	array(
-					str_replace(array('<module>.','<module>'), '+'.$route.'.', $filename),
-					str_replace(array('<module>.','<module>'), '+module.'.$route.'.', $filename),
-					str_replace(array('<module>.','<module>'), '+module.'.$route.DIRECTORY_SEPARATOR, $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.'+'.$route.'.', $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.'+'.$route.DIRECTORY_SEPARATOR, $filename),
-					str_replace(array('<module>.','<module>'), $name.'.', $filename),
-					str_replace(array('<module>.','<module>'), 'module.'.$name.'.', $filename),
-					str_replace(array('<module>.','<module>'), 'module.'.$name.DIRECTORY_SEPARATOR, $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.$name.'.', $filename),
-					str_replace(array('<module>.','<module>'), 'module'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
+					str_replace(array($m[0].'.',$m[0]), '+'.$route.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), '+module.'.$route.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), '+module.'.$route.DIRECTORY_SEPARATOR, $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module'.DIRECTORY_SEPARATOR.'+'.$route.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module'.DIRECTORY_SEPARATOR.'+'.$route.DIRECTORY_SEPARATOR, $filename),
+					str_replace(array($m[0].'.',$m[0]), $name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module.'.$name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module.'.$name.DIRECTORY_SEPARATOR, $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module'.DIRECTORY_SEPARATOR.$name.'.', $filename),
+					str_replace(array($m[0].'.',$m[0]), 'module'.DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR, $filename)
 				);
 			}
 		}
